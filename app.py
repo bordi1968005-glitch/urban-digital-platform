@@ -26,14 +26,20 @@ if section == "Home":
     show_img("sfondo_dashboard.png")
 
 elif section == "Rischio idraulico e raffrescamento climatico":
-    show_img("padova_spazi_verdi.png", "Raingardens e permeabilità urbana")
-    show_img("Daily_rainfall_november.png", "Precipitazioni – Novembre")
-    show_img("volume_tank_20m3.png", "Cisterna da 20 m³")
-    show_img("Overflow_tank_20m3.png", "Overflow idraulico")
+    show_img("padova_spazi_verdi.png", "Porta Portello con raingardens e cisterne di raccolta acqua", width=950)
+    show_img("Daily_rainfall_november.png", "Precipitazioni giornaliere di Novembre", width=950)
+    show_img("volume_tank_20m3.png", "Volume cisterna (20 m³)", width=950)
+    show_img("Overflow_tank_20m3.png", "Overflow della cisterna", width=950)
+    show_img("daily_rainfall_july.png", "Precipitazioni giornaliere di Luglio", width=950)
+    show_img("smart_scenario.png", "Scenario SMART", width=950)
+    show_img("scenario_smart_deficit.png", "Deficit dello scenario SMART", width=950)
+
 
 elif section == "Risparmio energetico":
-    show_img("pre_post_retrofit.jpg", "Consumi prima e dopo il retrofit")
-    show_img("mappa_retrofit.jpg", "Edifici del centro storico")
+    show_img("pre_post_retrofit.jpg", "Consumi pre/post retrofit degli edifici del centro storico", width=1100)
+    show_img("tabella_prepost_retrofit.jpg", width=950)
+    show_img("mappa_retrofit.jpg", "Mappa del centro storico di Padova con risparmi energetici", width=950)
+
 
 elif section == "Dispersioni di calore":
     show_img("thermo_building.jpg", "Termografia edificio")
