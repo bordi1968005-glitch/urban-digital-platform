@@ -3,38 +3,53 @@ from PIL import Image
 
 st.set_page_config(page_title="P.A.D.O.V.A. – Urban Platform", layout="wide")
 
-st.markdown(
-    """
-    <style>
-    /* caption = testo da presentazione */
-    .stImageCaption {
-        font-size: 1.3rem;
-        line-height: 1.5;
-        font-weight: 500;
-    }
+import streamlit as st
+from PIL import Image
 
-    /* desktop / proiettori */
-    @media (min-width: 900px) {
-        .stImageCaption {
-            font-size: 1.8rem;
-        }
-    }
+st.set_page_config(page_title="P.A.D.O.V.A. – Urban Platform", layout="wide")
 
-    /* schermi grandi / aula magna */
-    @media (min-width: 1400px) {
-        .stImageCaption {
-            font-size: 2.2rem;
-        }
-    }
+# ✅ CSS: ingrandisce caption immagini + st.caption su desktop/proiettore
+st.markdown("""
+<style>
+/* TEST: se vedi un bordino rosso sotto le immagini, il CSS è attivo */
+figure { outline: 0px solid red; }
 
-    /* titoli delle sezioni un filo più grandi */
-    h2 {
-        font-size: 2.6rem;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+/* 1) Caption di st.image(caption="...") (diverse versioni Streamlit) */
+figure figcaption,
+[data-testid="stImageCaption"],
+[data-testid="stCaptionContainer"] p,
+[data-testid="stCaptionContainer"] span,
+.stCaption,
+.st-emotion-cache-1vbkxwb, /* fallback: cambia spesso ma aiuta */
+.st-emotion-cache-ue6h4q {  /* fallback */
+  font-size: 1.2rem !important;
+  line-height: 1.5 !important;
+  font-weight: 500 !important;
+}
+
+/* Desktop / proiettore */
+@media (min-width: 900px) {
+  figure figcaption,
+  [data-testid="stImageCaption"],
+  [data-testid="stCaptionContainer"] p,
+  [data-testid="stCaptionContainer"] span,
+  .stCaption {
+    font-size: 2.0rem !important;
+  }
+}
+
+/* Schermi molto grandi */
+@media (min-width: 1400px) {
+  figure figcaption,
+  [data-testid="stImageCaption"],
+  [data-testid="stCaptionContainer"] p,
+  [data-testid="stCaptionContainer"] span,
+  .stCaption {
+    font-size: 2.4rem !important;
+  }
+}
+</style>
+""", unsafe_allow_html=True)
 
 
 
@@ -57,9 +72,7 @@ def show_img(path, title=None, caption=None, width=350):
     if title:
         st.subheader(title)
     img = Image.open(path)
-    st.image(img, use_column_width=True)
-    if caption:
-        st.caption(caption)
+    st.image(img, caption=caption, width=width)
 
 if section == "Home":
     show_img("sfondo_dashboard.png", width=350)
