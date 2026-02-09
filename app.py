@@ -22,7 +22,7 @@ def show_img(path, title=None, caption=None, width=350):
     if title:
         st.subheader(title)
     img = Image.open(path)
-    st.image(img, width=width)
+    st.image(img, use_column_width=True)
     if caption:
         st.caption(caption)
 
