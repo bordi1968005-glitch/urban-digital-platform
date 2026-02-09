@@ -38,13 +38,13 @@ elif section == "Raingardens and water tanks":
     show_img("Overflow_tank_20m3.png","Overflow", caption= "In the month of November with a 20 m³ tank the total overflow was 4.57 m³.", width=350)
     show_img("recupero_acqua_piovana.png", "SMART Scenario", caption= "In the event of periods of rainwater shortage, a smart scenario is proposed by adding catchment surfaces such as roofs and grey water collection.", width=350)
 
-elif menu.value == "2) Energy saving retrofit":
+elif menu.value == "Energy saving retrofit":
     st.header("Energy saving retrofit")
     show_img(path="pre_post_retrofit.jpg", title= "Energy savings calculation", width=350)
     show_img("tabella_prepost_retrofit.jpg", caption= "The proposed retrofit includes internal thermal insulation of walls, roof insulation, and the replacement of existing windows with high-performance low-emissivity glazing, while preserving architectural constraints.", width=350)
     show_img("mappa_retrofit.jpg", title= "Map of energy savings in historic city center buildings", caption= "A simplified essessment shows that these measures can achieve energy savings exceeding 60% across the historic city center.", width=350)
 
-elif menu.value == "3) Roof thermography":
+elif menu.value == "Roof thermography":
     st.header("Roof thermography")
     show_img("drone.jpeg", title= "Drone for thermographic analysis", caption= "By using drones equipped with thermal sensors, it is possible to detect areas of heat loss across buildings and identify where interventions are needed to improve energy efficiency.", width=350)
     show_img("1.jpeg", title= "Thermographic images of roofs", caption= "Using specialized software, starting from the image captured by the drone, we calculate the area of heat loss. In this case, it is 16,7%.", width=350)
@@ -53,14 +53,14 @@ elif menu.value == "3) Roof thermography":
     show_img("4.jpeg", caption= "Heat loss area: 4,1%", width=350)
     show_img("5.jpeg", caption= "Heat loss area: 4,5%", width=350)
 
-elif menu.value == "4) Waste management":
+elif menu.value == "Waste management":
     st.header("Waste management")
     show_img("rifiuti.png", title= "Waste data", caption="Smart sensors installed in waste collection trucks record location, waste type and collected quantities along its path.", width=350)
     show_img("waste_heatmap.png", caption="The heatmap enables the analysis and subsequent management of waste in the city.", width=350)
     show_img("bufferwaste.png", title="Buffer analysis", caption="The area within which the collection service is easily accessible to citizens.", width=350)
     show_img("rifiuti_padova.jpeg", "Percentage of waste in Padua", width=350)
 
-elif menu.value == "5) Smart poles":
+elif menu.value == "Smart poles":
     st.header("Smart poles")
     show_img("led_vs_hps.png", title="Confronto HPS vs LED", caption= "The transition to LED lighting systems has guaranteed a 150% increase in ground luminance, ensuring superior safety standards even in persistent fog conditions. A significant economic milestone is added to the performance benefit, with an annual saving of 74€ per light point and an estimated return on investment in just 5-6 years.", width=350)
 
