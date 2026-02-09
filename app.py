@@ -8,53 +8,33 @@ from PIL import Image
 
 st.set_page_config(page_title="P.A.D.O.V.A. – Urban Platform", layout="wide")
 
-# ✅ CSS: ingrandisce caption immagini + st.caption su desktop/proiettore
 st.markdown("""
 <style>
-/* TEST: se vedi un bordino rosso sotto le immagini, il CSS è attivo */
-figure { outline: 0px solid red; }
-
-/* 1) Caption di st.image(caption="...") (diverse versioni Streamlit) */
+/* Caption immagini: dimensione responsiva (mai enorme, mai minuscola) */
 figure figcaption,
-[data-testid="stImageCaption"],
-[data-testid="stCaptionContainer"] p,
-[data-testid="stCaptionContainer"] span,
-.stCaption,
-.st-emotion-cache-1vbkxwb, /* fallback: cambia spesso ma aiuta */
-.st-emotion-cache-ue6h4q {  /* fallback */
-  font-size: 1.2rem !important;
-  line-height: 1.5 !important;
+[data-testid="stImageCaption"]{
+  font-size: clamp(1.0rem, 0.6vw + 0.85rem, 1.35rem) !important;
+  line-height: 1.45 !important;
   font-weight: 500 !important;
-}
-
-/* Desktop / proiettore */
-@media (min-width: 900px) {
-  figure figcaption,
-  [data-testid="stImageCaption"],
-  [data-testid="stCaptionContainer"] p,
-  [data-testid="stCaptionContainer"] span,
-  .stCaption {
-    font-size: 2.0rem !important;
-  }
-}
-
-/* Schermi molto grandi */
-@media (min-width: 1400px) {
-  figure figcaption,
-  [data-testid="stImageCaption"],
-  [data-testid="stCaptionContainer"] p,
-  [data-testid="stCaptionContainer"] span,
-  .stCaption {
-    font-size: 2.4rem !important;
-  }
 }
 </style>
 """, unsafe_allow_html=True)
 
-
-
 st.title("P.A.D.O.V.A. – Urban Platform (LIGHT)")
 st.markdown("Where Technology Meets Sustainability")
+
+presentation = st.toggle("Presentation mode (proiettore)", value=False)
+if presentation:
+    st.markdown("""
+    <style>
+    figure figcaption,
+    [data-testid="stImageCaption"]{
+      font-size: 1.7rem !important;
+      line-height: 1.5 !important;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
 
 section = st.selectbox(
     "Sezione",
@@ -68,11 +48,11 @@ section = st.selectbox(
     ]
 )
 
-def show_img(path, title=None, caption=None, width=350):
+def show_img(path, title=None, caption=None):
     if title:
         st.subheader(title)
     img = Image.open(path)
-    st.image(img, caption=caption, width=width)
+    st.image(img, caption=caption, use_container_width=True)
 
 if section == "Home":
     show_img("sfondo_dashboard.png", width=350)
