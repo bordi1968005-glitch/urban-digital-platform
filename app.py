@@ -8,32 +8,32 @@ from PIL import Image
 
 st.set_page_config(page_title="P.A.D.O.V.A. – Urban Platform", layout="wide")
 
-st.markdown("""
-<style>
-/* Caption immagini: dimensione responsiva (mai enorme, mai minuscola) */
-figure figcaption,
-[data-testid="stImageCaption"]{
-  font-size: clamp(1.0rem, 0.6vw + 0.85rem, 1.35rem) !important;
-  line-height: 1.45 !important;
-  font-weight: 500 !important;
-}
-</style>
-""", unsafe_allow_html=True)
 
 st.title("P.A.D.O.V.A. – Urban Platform (LIGHT)")
 st.markdown("Where Technology Meets Sustainability")
 
-presentation = st.toggle("Presentation mode (proiettore)", value=False)
-if presentation:
-    st.markdown("""
-    <style>
-    figure figcaption,
-    [data-testid="stImageCaption"]{
-      font-size: 1.7rem !important;
-      line-height: 1.5 !important;
-    }
-    </style>
-    """, unsafe_allow_html=True)
+st.markdown("""
+<style>
+/* Caption custom: leggibile su desktop, ok su mobile */
+.cap{
+  font-size: 1.05rem;
+  color: #6b7280;
+  line-height: 1.45;
+  margin-top: -0.2rem;
+  margin-bottom: 1.2rem;
+  max-width: 1000px;
+}
+
+/* Desktop/proiettore */
+@media (min-width: 900px){
+  .cap{ font-size: 1.35rem; }
+}
+@media (min-width: 1400px){
+  .cap{ font-size: 1.55rem; }
+}
+</style>
+""", unsafe_allow_html=True)
+
 
 
 section = st.selectbox(
@@ -48,26 +48,26 @@ section = st.selectbox(
     ]
 )
 
-def show_img(path, title=None, caption=None, width=None):
+def show_img(path, title=None, caption=None):
     if title:
         st.subheader(title)
     img = Image.open(path)
-    if width is None:
-        st.image(img, caption=caption, use_container_width=True)
-    else:
-        st.image(img, caption=caption, width=width)
+    st.image(img, use_container_width=True)  # IMMAGINI GRANDI
+    if caption:
+        st.markdown(f"<div class='cap'>{caption}</div>", unsafe_allow_html=True)
+
 
 if section == "Home":
-    show_img("sfondo_dashboard.png", width=350)
+    show_img("sfondo_dashboard.png")
 
 elif section == "Raingardens and water tanks":
     st.header("Raingardens and water tanks")
-    show_img("raingardenscisterne.jpg", title= "One of the areas where rain gardens and corresponding tanks have been installed" , caption= "Due to the need to increase permeable surfaces and reduce the high hydraulic risk, the intervention proposes the installation of rain gardens and cisterns for water collection.", width=350)
-    show_img("raingardenportello.png", title="Nature-Based water collection and filtration gardens at Porta Portello", caption="In addition to the mitigation of the hydraulic risk, the use of Hemerocallis hybrida has generated an estimated evaporative cooling ecosystem service of 17.86 kW of thermal power substracted from the environment during peak hours, acting as a zero-impact natural air conditioning system", width=350)
-    show_img("Daily_rainfall_nov.png", "Daily precipitation in November", width=350)
-    show_img("volume_tank_20m3.png", "Tank volume (20 m³)", width=350)
-    show_img("Overflow_tank_20m3.png","Overflow", caption= "In the month of November with a 20 m³ tank the total overflow was 4.57 m³.", width=350)
-    show_img("recupero_acqua_piovana.png", "SMART Scenario", caption= "In the event of periods of rainwater shortage, a smart scenario is proposed by adding catchment surfaces such as roofs and grey water collection.", width=350)
+    show_img("raingardenscisterne.jpg", title= "One of the areas where rain gardens and corresponding tanks have been installed" , caption= "Due to the need to increase permeable surfaces and reduce the high hydraulic risk, the intervention proposes the installation of rain gardens and cisterns for water collection.")
+    show_img("raingardenportello.png", title="Nature-Based water collection and filtration gardens at Porta Portello", caption="In addition to the mitigation of the hydraulic risk, the use of Hemerocallis hybrida has generated an estimated evaporative cooling ecosystem service of 17.86 kW of thermal power substracted from the environment during peak hours, acting as a zero-impact natural air conditioning system")
+    show_img("Daily_rainfall_nov.png", "Daily precipitation in November")
+    show_img("volume_tank_20m3.png", "Tank volume (20 m³)")
+    show_img("Overflow_tank_20m3.png","Overflow", caption= "In the month of November with a 20 m³ tank the total overflow was 4.57 m³.")
+    show_img("recupero_acqua_piovana.png", "SMART Scenario", caption= "In the event of periods of rainwater shortage, a smart scenario is proposed by adding catchment surfaces such as roofs and grey water collection.")
 
 elif section == "Energy saving retrofit":
     st.header("Energy saving retrofit")
