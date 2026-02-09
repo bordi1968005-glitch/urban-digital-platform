@@ -71,29 +71,29 @@ elif section == "Raingardens and water tanks":
 
 elif section == "Energy saving retrofit":
     st.header("Energy saving retrofit")
-    show_img(path="pre_post_retrofit.jpg", title= "Energy savings calculation", width=350)
-    show_img("tabella_prepost_retrofit.jpg", caption= "The proposed retrofit includes internal thermal insulation of walls, roof insulation, and the replacement of existing windows with high-performance low-emissivity glazing, while preserving architectural constraints.", width=350)
-    show_img("mappa_retrofit.jpg", title= "Map of energy savings in historic city center buildings", caption= "A simplified essessment shows that these measures can achieve energy savings exceeding 60% across the historic city center.", width=350)
+    show_img(path="pre_post_retrofit.jpg", title= "Energy savings calculation")
+    show_img("tabella_prepost_retrofit.jpg", caption= "The proposed retrofit includes internal thermal insulation of walls, roof insulation, and the replacement of existing windows with high-performance low-emissivity glazing, while preserving architectural constraints.")
+    show_img("mappa_retrofit.jpg", title= "Map of energy savings in historic city center buildings", caption= "A simplified essessment shows that these measures can achieve energy savings exceeding 60% across the historic city center.")
 
 elif section == "Roof thermography":
     st.header("Roof thermography")
-    show_img("drone.jpeg", title= "Drone for thermographic analysis", caption= "By using drones equipped with thermal sensors, it is possible to detect areas of heat loss across buildings and identify where interventions are needed to improve energy efficiency.", width=350)
-    show_img("1.jpeg", title= "Thermographic images of roofs", caption= "Using specialized software, starting from the image captured by the drone, we calculate the area of heat loss. In this case, it is 16,7%.", width=350)
-    show_img("2.jpeg", caption= "Heat loss area: 9,4%", width=350)
-    show_img("3.jpeg", caption= "Heat loss area: 37,4%", width=350)
-    show_img("4.jpeg", caption= "Heat loss area: 4,1%", width=350)
-    show_img("5.jpeg", caption= "Heat loss area: 4,5%", width=350)
+    show_img("drone.jpeg", title= "Drone for thermographic analysis", caption= "By using drones equipped with thermal sensors, it is possible to detect areas of heat loss across buildings and identify where interventions are needed to improve energy efficiency.")
+    show_img("1.jpeg", title= "Thermographic images of roofs", caption= "Using specialized software, starting from the image captured by the drone, we calculate the area of heat loss. In this case, it is 16,7%.")
+    show_img("2.jpeg", caption= "Heat loss area: 9,4%")
+    show_img("3.jpeg", caption= "Heat loss area: 37,4%")
+    show_img("4.jpeg", caption= "Heat loss area: 4,1%")
+    show_img("5.jpeg", caption= "Heat loss area: 4,5%")
 
 elif section == "Waste management":
     st.header("Waste management")
-    show_img("rifiuti.png", title= "Waste data", caption="Smart sensors installed in waste collection trucks record location, waste type and collected quantities along its path.", width=350)
-    show_img("waste_heatmap.png", caption="The heatmap enables the analysis and subsequent management of waste in the city.", width=350)
-    show_img("bufferwaste.png", title="Buffer analysis", caption="The area within which the collection service is easily accessible to citizens.", width=350)
-    show_img("rifiuti_padova.jpeg", "Percentage of waste in Padua", width=350)
+    show_img("rifiuti.png", title= "Waste data", caption="Smart sensors installed in waste collection trucks record location, waste type and collected quantities along its path.")
+    show_img("waste_heatmap.png", caption="The heatmap enables the analysis and subsequent management of waste in the city.")
+    show_img("bufferwaste.png", title="Buffer analysis", caption="The area within which the collection service is easily accessible to citizens.")
+    show_img("rifiuti_padova.jpeg", "Percentage of waste in Padua")
 
 elif section == "Smart poles":
     st.header("Smart poles")
-    show_img("led_vs_hps.png", title="Confronto HPS vs LED", caption= "The transition to LED lighting systems has guaranteed a 150% increase in ground luminance, ensuring superior safety standards even in persistent fog conditions. A significant economic milestone is added to the performance benefit, with an annual saving of 74€ per light point and an estimated return on investment in just 5-6 years.", width=350)
+    show_img("led_vs_hps.png", title="Confronto HPS vs LED", caption= "The transition to LED lighting systems has guaranteed a 150% increase in ground luminance, ensuring superior safety standards even in persistent fog conditions. A significant economic milestone is added to the performance benefit, with an annual saving of 74€ per light point and an estimated return on investment in just 5-6 years.")
 
 
 
