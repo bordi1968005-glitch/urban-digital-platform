@@ -6,29 +6,36 @@ st.set_page_config(page_title="P.A.D.O.V.A. – Urban Platform", layout="wide")
 st.markdown(
     """
     <style>
-    /* caption base */
+    /* caption = testo da presentazione */
     .stImageCaption {
-        font-size: 1.1rem;
-        line-height: 1.4;
+        font-size: 1.3rem;
+        line-height: 1.5;
+        font-weight: 500;
     }
 
-    /* schermi grandi / proiettori */
+    /* desktop / proiettori */
     @media (min-width: 900px) {
         .stImageCaption {
-            font-size: 1.35rem;
+            font-size: 1.8rem;
         }
     }
 
-    /* schermi molto grandi */
+    /* schermi grandi / aula magna */
     @media (min-width: 1400px) {
         .stImageCaption {
-            font-size: 1.55rem;
+            font-size: 2.2rem;
         }
+    }
+
+    /* titoli delle sezioni un filo più grandi */
+    h2 {
+        font-size: 2.6rem;
     }
     </style>
     """,
     unsafe_allow_html=True
 )
+
 
 
 st.title("P.A.D.O.V.A. – Urban Platform (LIGHT)")
