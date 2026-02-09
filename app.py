@@ -3,6 +3,34 @@ from PIL import Image
 
 st.set_page_config(page_title="P.A.D.O.V.A. – Urban Platform", layout="wide")
 
+st.markdown(
+    """
+    <style>
+    /* caption base */
+    .stImageCaption {
+        font-size: 1.1rem;
+        line-height: 1.4;
+    }
+
+    /* schermi grandi / proiettori */
+    @media (min-width: 900px) {
+        .stImageCaption {
+            font-size: 1.35rem;
+        }
+    }
+
+    /* schermi molto grandi */
+    @media (min-width: 1400px) {
+        .stImageCaption {
+            font-size: 1.55rem;
+        }
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+
 st.title("P.A.D.O.V.A. – Urban Platform (LIGHT)")
 st.markdown("Where Technology Meets Sustainability")
 
