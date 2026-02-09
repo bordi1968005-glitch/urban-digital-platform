@@ -48,11 +48,14 @@ section = st.selectbox(
     ]
 )
 
-def show_img(path, title=None, caption=None):
+def show_img(path, title=None, caption=None, width=None):
     if title:
         st.subheader(title)
     img = Image.open(path)
-    st.image(img, caption=caption, use_container_width=True)
+    if width is None:
+        st.image(img, caption=caption, use_container_width=True)
+    else:
+        st.image(img, caption=caption, width=width)
 
 if section == "Home":
     show_img("sfondo_dashboard.png", width=350)
